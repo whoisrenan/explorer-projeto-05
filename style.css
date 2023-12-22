@@ -1,0 +1,116 @@
+/* Fontes importadas para utilizar na página */
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Poppins&display=swap");
+/* Regras universais do CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Variáveis da página */
+:root {
+  --fonte-primária: "Poppins", sans-serif;
+  --fonte-secundária: "Archivo", sans-serif;
+  --fonte-color-title: #fff;
+  --fonte-color-subtitle: #32264d;
+  --fonte-color-texto: #4e4958;
+  --fonte-color-paragrafo: #42d3ff;
+  --fonte-color-span: #c1bccc;
+  --bg-color-primária: #121214;
+  --bg-color-secundária: #d9d9d9;
+  --bg-color-formulario: #fafafc;
+  --bg-color-button: #04d361;
+  --bg-color-input: #e6e6f0;
+}
+/* Inserindo background dividido da página */
+body {
+  background: var(--bg-color-secundária);
+}
+body::before {
+  content: "";
+  width: 100%;
+  height: 368px;
+  background: var(--bg-color-primária);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+/* Iniciando posicionamento e estilização do container geral */
+.container {
+  width: 740px;
+  margin: 0 auto;
+}
+/* Estilizando e posicionando o header */
+header {
+  width: 320px;
+  margin-top: 75px;
+}
+header h1 {
+  color: var(--fonte-color-title);
+  font-family: var(--fonte-secundária);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 42px;
+  margin-bottom: 24px;
+}
+header p {
+  color: var(--fonte-color-paragrafo);
+  font-family: var(--fonte-primária);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+/* Estilizando e posicionando o form */
+form {
+  background: var(--bg-color-formulario);
+  border-radius: 8px 8px 0 0;
+  min-height: 300px;
+  margin-top: 38px;
+  padding: 64px;
+}
+form fieldset {
+  border: none;
+}
+form fieldset legend {
+  color: var(--fonte-color-subtitle);
+  font-family: var(--fonte-secundária);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 34px;
+  border-bottom: 1px solid var(--bg-color-input);
+  width: 100%;
+  padding-bottom: 16px;
+}
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.input-wrapper label {
+  color: var(--fonte-color-texto);
+  font-family: var(--fonte-primária);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 8px 0;
+}
+.input-wrapper label span {
+  color: var(--fonte-color-span);
+  font-family: var(--fonte-primária);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-left: 12px;
+}
+.input-wrapper input {
+  background: var(--bg-color-formulario);
+  font-family: var(--fonte-primária);
+  color: var(--fonte-color-span);
+  font-size: 16px;
+  line-height: 26px;
+  border: 1px solid var(--bg-color-input);
+  border-radius: 8px;
+  height: 50px;
+  padding: 0 24px;
+}
