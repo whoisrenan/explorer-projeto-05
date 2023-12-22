@@ -14,12 +14,14 @@
   --fonte-color-subtitle: #32264d;
   --fonte-color-texto: #4e4958;
   --fonte-color-paragrafo: #42d3ff;
-  --fonte-color-span: #c1bccc;
+  --fonte-color-span: #6c6a71;
   --bg-color-primária: #121214;
   --bg-color-secundária: #d9d9d9;
   --bg-color-formulario: #fafafc;
   --bg-color-button: #04d361;
   --bg-color-input: #e6e6f0;
+  --bg-color-section-button: #f0f0f4;
+  --border-button: #d6d6d6;
 }
 /* Inserindo background dividido da página */
 body {
@@ -69,9 +71,17 @@ form {
   min-height: 300px;
   margin-top: 38px;
   padding: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 form fieldset {
   border: none;
+}
+.fieldset-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 form fieldset legend {
   color: var(--fonte-color-subtitle);
@@ -87,13 +97,13 @@ form fieldset legend {
   display: flex;
   flex-direction: column;
 }
-.input-wrapper label {
+.input-wrapper label,
+.checkbox-wrapper label {
   color: var(--fonte-color-texto);
   font-family: var(--fonte-primária);
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
-  margin: 8px 0;
 }
 .input-wrapper label span {
   color: var(--fonte-color-span);
@@ -103,7 +113,9 @@ form fieldset legend {
   line-height: 20px;
   margin-left: 12px;
 }
-.input-wrapper input {
+.input-wrapper input,
+.input-wrapper textarea,
+.input-wrapper select {
   background: var(--bg-color-formulario);
   font-family: var(--fonte-primária);
   color: var(--fonte-color-span);
@@ -113,4 +125,84 @@ form fieldset legend {
   border-radius: 8px;
   height: 50px;
   padding: 0 24px;
+}
+.input-wrapper textarea {
+  padding: 0;
+  height: 170px;
+}
+.input-wrapper select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_54)'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_54'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right 24px top 50%;
+  cursor: pointer;
+}
+input:invalid {
+  border: 1px solid #FF1010;
+}
+/* Iniciando estilização do input checkbox e modificando para um estilo mais moderno */
+.checkbox-wrapper {
+  position: relative;
+}
+.checkbox-wrapper label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+}
+.checkbox-wrapper input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkbox-wrapper label::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--bg-color-input);
+  border-radius: 8px;
+  display: block;
+}
+.checkbox-wrapper input:checked + label::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_2908_23)'%3E%3Cpath d='M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z' fill='%2342D3FF'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2908_23'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+.checkbox-wrapper input:focus + label:before {
+  outline: 2px solid black;
+}
+.col-3 {
+  display: flex;
+  gap: 20px;
+}
+.col-3 > div:nth-child(1) {
+  width: 100%;
+}
+/* Iniciando footer. Utilizei o botão como footer e fora do formulário (tag form) pois irei trabalhar com o envio dos dados de uma outra forma. */
+footer {
+  background: var(--bg-color-section-button);
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 65px;
+  margin-bottom: 60px;
+  border-top: 1px solid var(--border-button);
+  border-radius: 0 0 8px 8px;
+}
+footer .button {
+  background: var(--bg-color-button);
+  color: var(--fonte-color-title);
+  font-family: var(--fonte-secundária);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  height: 60px;
+  border-radius: 8px;
+  border: var(--bg-color-button);
+}
+footer .button:hover {
+  background: #038d41;
+  cursor: pointer;
 }
