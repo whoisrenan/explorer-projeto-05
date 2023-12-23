@@ -137,9 +137,7 @@ form fieldset legend {
   background-position: right 24px top 50%;
   cursor: pointer;
 }
-input:invalid {
-  border: 1px solid #FF1010;
-}
+
 /* Iniciando estilização do input checkbox e modificando para um estilo mais moderno */
 .checkbox-wrapper {
   position: relative;
