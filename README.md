@@ -1,5 +1,5 @@
 <h1 align="center">Formulário de Evento</h1>
-<h3> Formulário de evento desenvolvido no Explorer Rocketseat</h3>
+<h3> Formulário de evento desenvolvido no Explorer Rocketseat.</h3>
 
 ![Formulário desenvolvido no Explorer da Rocketseat ](image.png)
 
